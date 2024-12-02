@@ -1,0 +1,12 @@
+<h1>Polizas</h1>
+<!--Cuando action queda vacio , hace referencia a la función polizaFormView con poliza/
+hace referencia a sí mismo
+también se podría poner '{% url 'poliza' %}'-->
+<form action="" method="post">
+
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+    <input type="submit" value="Submit">
+</form>

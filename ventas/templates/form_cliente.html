@@ -1,0 +1,25 @@
+<!-- AL ENVIAR EL TEXTO SE DISPARA EL MÉTODO POST "{% url 'cliente' %}"-->
+<form action="{% url 'cliente' %}" method="post">
+    <!-- tipo de variable que genera número aleatorio por cada formulario
+     django realiza una validación del formulario en html vs el token generado 
+    previene de ataques que suplantan con otros valores de otro servidor -->
+    {% csrf_token %}  
+    <fieldset>
+        <legend>
+            <h1>Cliente</h1>
+        </legend>
+        {% if error_message %}
+            <p>{{  error_message }}</p>
+        {% endif %}
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre">
+        <br />
+        <input type="submit" value="Enviar">
+    </fieldset>  
+</form>
+<!-- Listar a los clientes -->
+<ul>
+    {% for cliente in cliente %}
+    <li>{{ cliente.nombre }}</li>
+    {% endfor %}
+</ul>

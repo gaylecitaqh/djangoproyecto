@@ -1,0 +1,15 @@
+<h1>
+    Cliente
+</h1>
+<!-- listar los datos de la base de datos
+<ul>{% for cliente in cliente %}
+    <li>{{ cliente.nombre }}</li>
+    {% endfor %}
+</ul>
+-->
+<ul>{% for cliente in cliente %}
+            <li>{{ cliente.nombre }}</li>
+        {% empty %}
+            <li>No se encontraron clientes</li>
+        {% endfor %}
+</ul>
